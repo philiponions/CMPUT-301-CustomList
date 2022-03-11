@@ -1,6 +1,7 @@
 import com.example.simpleparadox.listycity.City;
 import com.example.simpleparadox.listycity.CustomList;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.Before;
 
@@ -28,6 +29,17 @@ public class CustomListTest {
         City city = new City("Yellowknife", "Northwest Territories");
         list.add(city);
         assertTrue(list.hasCity(city));
+    }
+    @Test
+    void testCountCities(){
+        CityList cityList = mockCityList();
+        City city1 = new City("Charlottetown", "Prince Edward Island");
+        City city2 = new City("Yellowknife", "Northwest Territories");
+        cityList.add(city1);
+        cityList.add(city2);
+        Assertions.assertEquals(3, cityList.getCities().size());
+
+
     }
 
 }
